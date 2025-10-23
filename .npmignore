@@ -1,0 +1,33 @@
+# Source files
+src/
+
+# Tests
+tests/
+*.test.ts
+*.spec.ts
+
+# Development files
+tsconfig.json
+.eslintrc.js
+.prettierrc
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# CI
+.github/
+
+# OpenSpec development files
+openspec/
+
+# Documentation (except README)
+docs/
+
+# Other project files
+other/
+
