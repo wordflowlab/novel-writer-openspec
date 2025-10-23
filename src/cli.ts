@@ -2,6 +2,9 @@
 
 import { Command } from 'commander';
 import chalk from 'chalk';
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 import { InitCommand } from './commands/init.js';
 import { ValidateCommand } from './commands/validate.js';
 import { ListCommand } from './commands/list.js';
@@ -10,8 +13,13 @@ import { ArchiveCommand } from './commands/archive.js';
 
 const program = new Command();
 
-// 版本信息
-const version = '0.1.0';
+// 从 package.json 读取版本信息
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const packageJson = JSON.parse(
+  readFileSync(join(__dirname, '../package.json'), 'utf-8')
+);
+const version = packageJson.version;
 
 program
   .name('novelspec')
