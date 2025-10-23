@@ -1,4 +1,5 @@
 import * as path from 'path';
+import * as fs from 'fs';
 import chalk from 'chalk';
 import { FileOperations } from '../utils/file-ops.js';
 import { MarkdownParser } from '../core/parser.js';
@@ -186,7 +187,6 @@ export class ShowCommand {
     const specs: string[] = [];
 
     const walk = (dir: string, relativePath: string = '') => {
-      const fs = require('fs');
       const entries = fs.readdirSync(dir, { withFileTypes: true });
 
       for (const entry of entries) {

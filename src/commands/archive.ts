@@ -1,5 +1,6 @@
 import * as path from 'path';
 import * as fs from 'fs';
+import * as readline from 'readline';
 import chalk from 'chalk';
 import { FileOperations } from '../utils/file-ops.js';
 import { MarkdownParser } from '../core/parser.js';
@@ -45,7 +46,6 @@ export class ArchiveCommand {
 
       // 2. 确认归档
       if (!options.yes) {
-        const readline = require('readline');
         const rl = readline.createInterface({
           input: process.stdin,
           output: process.stdout,

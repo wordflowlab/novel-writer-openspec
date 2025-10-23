@@ -1,4 +1,5 @@
 import * as path from 'path';
+import * as fs from 'fs';
 import { FileOperations } from '../utils/file-ops.js';
 import { MarkdownParser } from './parser.js';
 
@@ -335,8 +336,7 @@ export class FormatValidator {
     // 简化：直接列出所有文件
     const walkDir = (dir: string): void => {
       if (!FileOperations.exists(dir)) return;
-      
-      const fs = require('fs');
+
       const entries = fs.readdirSync(dir, { withFileTypes: true });
       
       for (const entry of entries) {

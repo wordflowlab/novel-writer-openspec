@@ -1,4 +1,5 @@
 import * as path from 'path';
+import * as fs from 'fs';
 import chalk from 'chalk';
 import { FileOperations } from '../utils/file-ops.js';
 import { FormatValidator, ValidationResult } from '../core/validator.js';
@@ -74,7 +75,6 @@ export class ValidateCommand {
       process.exit(1);
     }
 
-    const fs = require('fs');
     const entries = fs.readdirSync(changesDir, { withFileTypes: true });
     const changeIds = entries
       .filter((e: any) => e.isDirectory() && e.name !== 'archive')
