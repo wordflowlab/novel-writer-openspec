@@ -1,6 +1,6 @@
 import * as path from 'path';
-import { FileOperations } from '../utils/file-ops';
-import { MarkdownParser } from './parser';
+import { FileOperations } from '../utils/file-ops.js';
+import { MarkdownParser } from './parser.js';
 
 /**
  * 验证错误类型
@@ -278,8 +278,8 @@ export class FormatValidator {
 
             // 验证 Scenario 是否有 WHEN/THEN
             for (const scenario of requirement.scenarios) {
-              const hasWhen = scenario.conditions.some(c => c.type === 'WHEN');
-              const hasThen = scenario.conditions.some(c => c.type === 'THEN');
+              const hasWhen = scenario.conditions.some((c: any) => c.type === 'WHEN');
+              const hasThen = scenario.conditions.some((c: any) => c.type === 'THEN');
 
               if (!hasWhen || !hasThen) {
                 errors.push({

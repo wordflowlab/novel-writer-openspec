@@ -1,7 +1,7 @@
 import * as path from 'path';
 import chalk from 'chalk';
-import { FileOperations } from '../utils/file-ops';
-import { FormatValidator, ValidationResult } from '../core/validator';
+import { FileOperations } from '../utils/file-ops.js';
+import { FormatValidator, ValidationResult } from '../core/validator.js';
 
 /**
  * 验证选项

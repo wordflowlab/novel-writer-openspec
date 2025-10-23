@@ -2,11 +2,11 @@
 
 import { Command } from 'commander';
 import chalk from 'chalk';
-import { InitCommand } from './commands/init';
-import { ValidateCommand } from './commands/validate';
-import { ListCommand } from './commands/list';
-import { ShowCommand } from './commands/show';
-import { ArchiveCommand } from './commands/archive';
+import { InitCommand } from './commands/init.js';
+import { ValidateCommand } from './commands/validate.js';
+import { ListCommand } from './commands/list.js';
+import { ShowCommand } from './commands/show.js';
+import { ArchiveCommand } from './commands/archive.js';
 
 const program = new Command();
 
@@ -23,9 +23,10 @@ program
   .command('init <project-name>')
   .description('初始化一个新的小说项目')
   .option('--here', '在当前目录初始化')
+  .option('--tools <tools>', '指定要配置的 AI 工具 (all, none, 或逗号分隔的工具 ID)')
   .action(async (projectName: string, options: any) => {
     try {
-      const initCommand = new InitCommand();
+      const initCommand = new InitCommand({ tools: options.tools });
       await initCommand.execute(projectName, options);
     } catch (error) {
       console.error(chalk.red(`错误: ${(error as Error).message}`));
@@ -101,18 +102,21 @@ program
 program.on('--help', () => {
   console.log('');
   console.log(chalk.blue('示例:'));
-  console.log('  $ novelspec init my-novel        # 创建新项目');
-  console.log('  $ novelspec init my-novel --here # 在当前目录初始化');
-  console.log('  $ novelspec list                 # 列出活跃变更');
-  console.log('  $ novelspec list --specs         # 列出所有规格');
-  console.log('  $ novelspec list --archive       # 列出已归档变更');
-  console.log('  $ novelspec show add-ch-1        # 显示变更详情');
+  console.log('  $ novelspec init my-novel                    # 创建新项目（交互式选择工具）');
+  console.log('  $ novelspec init my-novel --here             # 在当前目录初始化');
+  console.log('  $ novelspec init my-novel --tools cursor,claude  # 指定特定工具');
+  console.log('  $ novelspec init my-novel --tools all        # 配置所有可用工具');
+  console.log('  $ novelspec init my-novel --tools none       # 仅通用 AGENTS.md');
+  console.log('  $ novelspec list                             # 列出活跃变更');
+  console.log('  $ novelspec list --specs                     # 列出所有规格');
+  console.log('  $ novelspec list --archive                   # 列出已归档变更');
+  console.log('  $ novelspec show add-ch-1                    # 显示变更详情');
   console.log('  $ novelspec show characters/protagonist --type spec  # 显示规格详情');
-  console.log('  $ novelspec validate             # 验证所有变更');
-  console.log('  $ novelspec validate add-ch-1    # 验证单个变更');
-  console.log('  $ novelspec validate --strict    # 严格验证');
-  console.log('  $ novelspec archive add-ch-1     # 归档已完成的变更');
-  console.log('  $ novelspec archive add-ch-1 -y  # 归档（跳过确认）');
+  console.log('  $ novelspec validate                         # 验证所有变更');
+  console.log('  $ novelspec validate add-ch-1                # 验证单个变更');
+  console.log('  $ novelspec validate --strict                # 严格验证');
+  console.log('  $ novelspec archive add-ch-1                 # 归档已完成的变更');
+  console.log('  $ novelspec archive add-ch-1 -y              # 归档（跳过确认）');
   console.log('');
   console.log(chalk.blue('文档:'));
   console.log('  https://github.com/wordflowlab/novel-writer-openspec');

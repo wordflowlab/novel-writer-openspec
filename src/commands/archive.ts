@@ -1,8 +1,8 @@
 import * as path from 'path';
 import * as fs from 'fs';
 import chalk from 'chalk';
-import { FileOperations } from '../utils/file-ops';
-import { MarkdownParser } from '../core/parser';
+import { FileOperations } from '../utils/file-ops.js';
+import { MarkdownParser } from '../core/parser.js';
 
 /**
  * 归档选项
