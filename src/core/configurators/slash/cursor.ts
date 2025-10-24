@@ -4,7 +4,8 @@ import { SlashCommandId } from '../../templates/slash-command-templates.js';
 const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.cursor/commands/novelspec-proposal.md',
   apply: '.cursor/commands/novelspec-apply.md',
-  archive: '.cursor/commands/novelspec-archive.md'
+  archive: '.cursor/commands/novelspec-archive.md',
+  clarify: '.cursor/commands/novelspec-clarify.md'
 };
 
 const FRONTMATTER: Record<SlashCommandId, string> = {
@@ -25,6 +26,12 @@ name: /novelspec-archive
 id: novelspec-archive
 category: NovelSpec
 description: 归档已部署的NovelSpec变更并更新规格。
+---`,
+  clarify: `---
+name: /novelspec-clarify
+id: novelspec-clarify
+category: NovelSpec
+description: 澄清规格中的模糊决策点（并行路径展示模式）。
 ---`
 };
 

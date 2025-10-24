@@ -4,7 +4,8 @@ import { SlashCommandId } from '../../templates/index.js';
 const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.augment/commands/novelspec-proposal.md',
   apply: '.augment/commands/novelspec-apply.md',
-  archive: '.augment/commands/novelspec-archive.md'
+  archive: '.augment/commands/novelspec-archive.md',
+  clarify: '.augment/commands/novelspec-clarify.md'
 };
 
 const FRONTMATTER: Record<SlashCommandId, string> = {
@@ -19,6 +20,10 @@ argument-hint: change-id
   archive: `---
 description: Archive a deployed NovelSpec change and update specs.
 argument-hint: change-id
+---`,
+  clarify: `---
+description: Clarify ambiguous decision points in specs (parallel path display mode).
+argument-hint: spec context (optional)
 ---`
 };
 

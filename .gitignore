@@ -25,7 +25,7 @@ coverage/
 # Temporary files
 *.tmp
 .tmp/
-.claude/
 .openspec/
-other/
-AGENTS.md
+# other/
+
+# NOTE: .claude/ 和 AGENTS.md 现在需要提交（包含项目配置）

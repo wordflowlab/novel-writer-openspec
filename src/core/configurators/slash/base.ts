@@ -9,7 +9,7 @@ export interface SlashCommandTarget {
   kind: 'slash';
 }
 
-const ALL_COMMANDS: SlashCommandId[] = ['proposal', 'apply', 'archive'];
+const ALL_COMMANDS: SlashCommandId[] = ['proposal', 'apply', 'archive', 'clarify'];
 
 export abstract class SlashCommandConfigurator {
   abstract readonly toolId: string;

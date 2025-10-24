@@ -17,10 +17,19 @@ import { getUrbanTemplate } from './worldbuilding/urban-template.js';
 // 大纲模板
 import { getChapterTemplate, getOutlineTemplate } from './outline/chapter-template.js';
 
+// Knowledge 模板
+import { getWorldSettingTemplate } from './knowledge/world-setting-template.js';
+import { getCharacterProfileTemplate } from './knowledge/character-profile-template.js';
+
+// Tracking 模板
+import { getPlotTrackerTemplate } from './tracking/plot-tracker-template.js';
+
 // 重新导出
 export { getProtagonistTemplate, getSupportingTemplate, getVillainTemplate };
 export { getXuanhuanTemplate, getWuxiaTemplate, getUrbanTemplate };
 export { getChapterTemplate, getOutlineTemplate };
+export { getWorldSettingTemplate, getCharacterProfileTemplate };
+export { getPlotTrackerTemplate };
 
 /**
  * 模板类型定义

@@ -4,7 +4,8 @@ import { SlashCommandId } from '../../templates/index.js';
 const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.crush/commands/novelspec/proposal.md',
   apply: '.crush/commands/novelspec/apply.md',
-  archive: '.crush/commands/novelspec/archive.md'
+  archive: '.crush/commands/novelspec/archive.md',
+  clarify: '.crush/commands/novelspec/clarify.md'
 };
 
 const FRONTMATTER: Record<SlashCommandId, string> = {
@@ -25,6 +26,12 @@ name: NovelSpec: Archive
 description: Archive a deployed NovelSpec change and update specs.
 category: NovelSpec
 tags: [novelspec, archive]
+---`,
+  clarify: `---
+name: NovelSpec: Clarify
+description: Clarify ambiguous decision points in specs (parallel path display mode).
+category: NovelSpec
+tags: [novelspec, clarify]
 ---`
 };
 

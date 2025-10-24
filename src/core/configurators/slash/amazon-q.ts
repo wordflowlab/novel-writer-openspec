@@ -4,7 +4,8 @@ import { SlashCommandId } from '../../templates/index.js';
 const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: '.amazonq/prompts/novelspec-proposal.md',
   apply: '.amazonq/prompts/novelspec-apply.md',
-  archive: '.amazonq/prompts/novelspec-archive.md'
+  archive: '.amazonq/prompts/novelspec-archive.md',
+  clarify: '.amazonq/prompts/novelspec-clarify.md'
 };
 
 const FRONTMATTER: Record<SlashCommandId, string> = {
@@ -34,7 +35,16 @@ The user wants to archive the following deployed change. Use the novelspec instr
 
 <ChangeId>
   $ARGUMENTS
-</ChangeId>`
+</ChangeId>`,
+  clarify: `---
+description: Clarify ambiguous decision points in specs (parallel path display mode).
+---
+
+The user wants to clarify ambiguous points in their spec. Use the novelspec instructions to guide them through the clarification workflow with parallel paths and batch questions.
+
+<UserContext>
+  $ARGUMENTS
+</UserContext>`
 };
 
 export class AmazonQSlashCommandConfigurator extends SlashCommandConfigurator {

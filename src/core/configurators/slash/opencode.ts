@@ -7,6 +7,7 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: ".opencode/command/novelspec-proposal.md",
   apply: ".opencode/command/novelspec-apply.md",
   archive: ".opencode/command/novelspec-archive.md",
+  clarify: ".opencode/command/novelspec-clarify.md"
 };
 
 const FRONTMATTER: Record<SlashCommandId, string> = {
@@ -31,6 +32,15 @@ description: Archive a deployed NovelSpec change and update specs.
   $ARGUMENTS
 </ChangeId>
 `,
+  clarify: `---
+agent: build
+description: Clarify ambiguous decision points in specs (parallel path display mode).
+---
+The user wants to clarify ambiguous points in their spec. Use the novelspec instructions to guide them through the clarification workflow.
+<UserContext>
+  $ARGUMENTS
+</UserContext>
+`
 };
 
 export class OpenCodeSlashCommandConfigurator extends SlashCommandConfigurator {

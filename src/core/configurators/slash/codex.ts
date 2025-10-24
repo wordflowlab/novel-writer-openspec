@@ -10,6 +10,7 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
   proposal: ".codex/prompts/novelspec-proposal.md",
   apply: ".codex/prompts/novelspec-apply.md",
   archive: ".codex/prompts/novelspec-archive.md",
+  clarify: ".codex/prompts/novelspec-clarify.md"
 };
 
 export class CodexSlashCommandConfigurator extends SlashCommandConfigurator {
@@ -42,6 +43,12 @@ argument-hint: change-id
 ---
 
 $ARGUMENTS`,
+      clarify: `---
+description: Clarify ambiguous decision points in specs (parallel path display mode).
+argument-hint: spec context (optional)
+---
+
+$ARGUMENTS`
     };
     return frontmatter[id];
   }

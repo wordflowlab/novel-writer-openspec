@@ -35,9 +35,15 @@
     "@inquirer/core": "^10.2.2",
     "chalk": "^5.5.0",
     "commander": "^14.0.0",
+    "fs-extra": "^11.3.2",
+    "inquirer": "^12.10.0",
+    "js-yaml": "^4.1.0",
     "ora": "^8.2.0"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.9",
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.10.0",
     "@typescript-eslint/eslint-plugin": "^6.13.0",
     "@typescript-eslint/parser": "^6.13.0",
