@@ -1,6 +1,6 @@
 {
   "name": "novelspec",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "基于 OpenSpec 方法论的小说创作管理工具",
   "type": "module",
   "main": "dist/index.js",
